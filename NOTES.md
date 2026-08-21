@@ -5,12 +5,18 @@
 ### Key Learnings
 
 #### 1. HTTP Request-Response Cycle
-- Every web extraction starts with a **Client GET/POST Request** and a **Server Response**.
+
+- Every website extraction starts with a **Client GET/POST Request** and a **Server Response**.
 - **Status Codes:**
-  - `200 OK`: Successful fetch. Ready to parse.
-  - `403 Forbidden`: Bot blocked (missing/invalid headers).
-  - `429 Too Many Requests`: Rate limited (sending requests too fast).
-  - `503 Service Unavailable`: Server busy or anti-bot shield active.
+  - **200 OK:** Request succeeded and the server returned the expected data.
+  - **301 Moved Permanently:**  Resource has been assigned a new permanent URL.
+  - **302 Found:**  Temporary redirect to another URL.
+  - **400 Bad Request:**  The request was malformed or invalid.
+  - **401 Unauthorized:**  Authentication is required.
+  - **403 Forbidden:**  Access is denied despite authentication.
+  - **404 Not Found:**  The requested resource does not exist.
+  - **500 Internal Server Error:**  The server encountered an unexpected condition.
+  - **503 Service Unavailable:** The server is temporarily unable to handle the request.
 
 #### 2. Header Spoofing & Identity
 - Default `requests` send `User-Agent: python-requests/...`, which marketing servers easily flag and block.
@@ -26,11 +32,12 @@
 ## Useful Command Cheatsheet
 
 ### Git Workflow
+
 ```bash
 git add .
 git commit -m "your commit message"
 git push origin main
-
+```
 ---
 ### Module 1.3: DOM Parsing & CSS Selectors with BeautifulSoup
 
